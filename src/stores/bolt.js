@@ -8,8 +8,7 @@ export const useBoltStore = defineStore('bolt', () => {
 
   const loadAll = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/bolt')
-      products.value = response.data
+      products.value = (await axios.get('http://localhost:3000/bolt')).data
 
     } catch (error) {
       console.error(error)
